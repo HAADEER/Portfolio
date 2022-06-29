@@ -1,5 +1,5 @@
 
-.buttonLook{
-    background-color: brown;
-    color: aliceblue;
+.btn{
+    display: flex;
+    justify-content: center;
 }

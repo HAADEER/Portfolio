@@ -1,13 +1,12 @@
-
+import "./counter.css" ;
 import {Button} from 'react-bootstrap'
 
 const DecrementCount = (props) =>{
 
  
 
-    return <div>
-                                         {/* disabled={props.count <= 0} */}
-        <Button variant="danger" onClick={props.fun}>-</Button>
+    return <div  className =' d-flex justify-content-center'>
+        <button type="button" className = "btn btn-danger" onClick={props.fun}>-</button>
     </div>
 
 }

@@ -3,7 +3,7 @@ import DecrementCount from "./decrement";
 import { useState } from "react";
 //import './counter.css';
 import { Container , Card  , Row , Col} from "react-bootstrap";
-
+import "./counter.css";
 
 const Counter = () =>{
 
@@ -22,14 +22,14 @@ const Counter = () =>{
     return <Container className="mt-5 w-25">
 
 <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>{count}</Card.Title>
+    <Card.Body >
+      <Card.Title className="text-center">{count}</Card.Title>
       <Row >
         <Col>
-      <IncrementCount className="buttonLook" fun={increase}/>
+      <IncrementCount className="buttonLook btn" fun={increase}/>
       </Col>
       <Col>
-      <DecrementCount className="buttonLook" fun={decrease}/>
+      <DecrementCount className="buttonLook btn" fun={decrease}/>
       </Col>
       </Row>
 
