@@ -1,0 +1,19 @@
+.navbar-wrapper{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navbar-item{
+    display: flex;
+}
+.navbar-item li{
+    list-style: none;
+    padding: 5px 20px ;
+}
+.navbar-item a ,  .navbar-wrapper h2 a{
+    text-decoration: none;
+    color: black;
+}
+

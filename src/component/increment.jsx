@@ -1,12 +1,12 @@
-
+import './counter.css';
 import {Button} from 'react-bootstrap'
 
 const IncrementCount = (props) =>{
 
     //console.log(props.fun)
 
-    return <div>
-        <Button variant="primary" onClick={props.fun}>+</Button>
+    return <div className =' d-flex justify-content-center'>
+        <button type="button" className ="btn btn-primary" onClick={props.fun}>+</button>
     </div>
 }
 
