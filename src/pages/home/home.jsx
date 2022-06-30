@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  return (
-    <h1 className='container text-center'>Home</h1>
-  )
-}
+  const userTodo = useSelector((state) => state.todos);
+  //console.log(userTodo)
 
-export default Home
+  return (
+    <div className="container">
+      <h1 className="text-center">Home</h1>
+
+    </div>
+  );
+};
+
+export default Home;

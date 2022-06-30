@@ -9,6 +9,7 @@ import About from './pages/about/about';
 import Home from './pages/home/home';
 import Products from './pages/product/products';
 import ItemProduct from './pages/product/itemProduct';
+import Todo from './pages/todo/todo';
 function App() {
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/product/:id' element={<ItemProduct/>}/>
+        <Route path='/todo' element={<Todo/>}/>
         </Routes>
     </BrowserRouter>
   );
