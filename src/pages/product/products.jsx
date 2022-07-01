@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useSelector ,useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
+import {fetchProducts} from '../../redux/features/productSlice'
 const Products = () => {
+
+  const dispatch = useDispatch()
   useEffect(() => {
-    //console.log("works")
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
+    dispatch(fetchProducts());
   }, []);
 
-  const [products, setProducts] = useState([]);
-  //console.log(products)
+  const products = useSelector(state => state.products.products);
+  const pendding = useSelector(state => state.products.pendding);
+
   return (
     <div>
       <h1 className="text-center mb-5">Shops</h1>
 
-      {products.length > 0 ? (
+      {pendding ? (
         <div className="container d-flex justify-content-center">
           <div className="row">
           {products.map((item) => {

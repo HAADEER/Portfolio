@@ -1,19 +1,12 @@
-// import {createStore} from "redux"
-
-// import {reducer} from "./todoReducer"
-// //Store
-// export const store = createStore(
-//     reducer
-// )
-
 import counterSlice from './features/counterSlice' ;
 import { configureStore } from "@reduxjs/toolkit" ;
-
+import todoSlice from './features/todoSlicer' ;
+import  shopReducer  from './features/productSlice';
 
 export const store = configureStore({
-    reducer: {
+    reducer : {
+        todo : todoSlice,
         counter : counterSlice,
-      },
-
+        products : shopReducer ,
+    }
 })
-

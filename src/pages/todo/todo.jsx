@@ -2,24 +2,15 @@ import React, { useState } from 'react'
 import { useSelector  , useDispatch} from 'react-redux'
 import TodoForm from '../../component/todo/todo_form'
 import TodoList from '../../component/todo/todo_list'
-import { addTodoAction, removeTodoAction } from '../../redux/todoReducer'
-
+import {addTodoAction , removeTodoAction} from "../../redux/features/todoSlicer"
 const Todo = () => {
 
-    const reduxState = useSelector(state => state.todos)
+    const reduxState = useSelector(state => state.todo.todo)
+
     const reduxDispatch = useDispatch();
 
-    console.log("reduxState : " ,reduxState);
 
-     const [todos , setTodo] = useState([
-         {
-             title : "task1" ,
-             content : "todo list"
-        }
-     ])
-  //task is object {title , content}
     const addTodo = (task)=>{
-        //setTodo([...todos , task])
         reduxDispatch(addTodoAction(task))
     }
 

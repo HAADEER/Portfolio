@@ -11,24 +11,23 @@ const Counter = () =>{
 
     //const [count , setCount] = useState(0)
     const count = useSelector(state => state.counter.count)
-    console.log("use selector " , useSelector(state => state))
+    console.log("use selector " , useSelector(state => state.counter.count))
     console.log("count " , count);
     const dispatch = useDispatch();
 
     const increase = () => {
       console.log("incrase")
-        dispatch(IncrementAction())
+      dispatch(IncrementAction())
     }
 
     const decrease = () => {
       console.log("decrease")
-
-        if(count>0){
+      if(count>0){
            dispatch(DecrementAction())
-        }
+      }
     }
 
-    return <Container className="mt-5 w-25">
+    return ( <Container className="mt-5 w-25">
 
 <Card style={{ width: '18rem' }}>
     <Card.Body >
@@ -46,7 +45,7 @@ const Counter = () =>{
   </Card>
 
     </Container>
-
+    )
 }
 
 export default Counter;

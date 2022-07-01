@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector ,useDispatch } from "react-redux";
+import {shopReducer} from "../../redux/features/productSlice" ;
 
 const ItemProduct = () => {
   const paramID = useParams();
-  console.log(paramID.id);
+  //console.log(paramID.id);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${paramID.id}`)
@@ -11,7 +15,7 @@ const ItemProduct = () => {
       .then((json) => setItemProduct(json));
   });
   const [itemProduct, setItemProduct] = useState({});
-  console.log(itemProduct);
+
   return (
     <div>
       {Object.keys(itemProduct).length !== 0 ? 
