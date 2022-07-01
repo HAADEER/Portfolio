@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/counter' element={<Counter />} />
         <Route path='/about' element={<About/>}/>
-        <Route path='/home' element={<Home/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/product/:id' element={<ItemProduct/>}/>
         <Route path='/todo' element={<Todo/>}/>

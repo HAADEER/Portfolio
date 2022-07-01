@@ -12,7 +12,7 @@ const TodoForm = ({addTodo}) => {
         addTodo({title , content})
         setTitle("")
         setContent("")
-        //console.log("title" , title , "content" , content)
+
     }
 
   return (
