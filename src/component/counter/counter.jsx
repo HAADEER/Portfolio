@@ -4,18 +4,27 @@ import { useState } from "react";
 //import './counter.css';
 import { Container , Card  , Row , Col} from "react-bootstrap";
 import "./counter.css";
+import { useSelector , useDispatch} from "react-redux";
+import {IncrementAction , DecrementAction} from '../../redux/features/counterSlice'
 
 const Counter = () =>{
 
-    const [count , setCount] = useState(0)
+    //const [count , setCount] = useState(0)
+    const count = useSelector(state => state.counter.count)
+    console.log("use selector " , useSelector(state => state))
+    console.log("count " , count);
+    const dispatch = useDispatch();
 
     const increase = () => {
-        setCount(count + 1)
+      console.log("incrase")
+        dispatch(IncrementAction())
     }
 
     const decrease = () => {
+      console.log("decrease")
+
         if(count>0){
-            setCount(count - 1)
+           dispatch(DecrementAction())
         }
     }
 
@@ -26,10 +35,10 @@ const Counter = () =>{
       <Card.Title className="text-center">{count}</Card.Title>
       <Row >
         <Col>
-      <IncrementCount className="buttonLook btn" fun={increase}/>
+      <IncrementCount className="buttonLook btn" increase={increase}/>
       </Col>
       <Col>
-      <DecrementCount className="buttonLook btn" fun={decrease}/>
+      <DecrementCount className="buttonLook btn" decrease={decrease}/>
       </Col>
       </Row>
 

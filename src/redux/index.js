@@ -1,45 +1,19 @@
-import {createStore} from "redux"
-//Action types
-const ADD_TODO = "ADD_TODO"
-const REMOVE_TODO = "REMOVE_TODO"
+// import {createStore} from "redux"
 
-//Action
-export const addTodoAction = (payload) => {
-    return {
-        type : ADD_TODO,
-        payload 
-    }
-}
-export const removeTodoAction = (payload) =>{
-    return {
-        type : REMOVE_TODO,
-        payload
-    }
-}
+// import {reducer} from "./todoReducer"
+// //Store
+// export const store = createStore(
+//     reducer
+// )
 
-//InitialState
-const InitialState = {
-    todos : [],
-}
+import counterSlice from './features/counterSlice' ;
+import { configureStore } from "@reduxjs/toolkit" ;
 
-//Reducer
-const reducer = (state = InitialState , action) => {
 
-    switch(action.type){
-        case ADD_TODO :
-            return {...state , todos: [...state.todos , action.payload]}
+export const store = configureStore({
+    reducer: {
+        counter : counterSlice,
+      },
 
-        case REMOVE_TODO :
-            return {...state , todos : [...state.todos.filter((elem , indx) => {
-                return indx !== action.payload
-            })]}
+})
 
-        default:
-            return state;
-    }
-}
-
-//Store
-export const store = createStore(
-    reducer
-)
