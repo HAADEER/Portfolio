@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector  , useDispatch} from 'react-redux'
 import TodoForm from '../../component/todo/todo_form'
 import TodoList from '../../component/todo/todo_list'
-import { addTodoAction, removeTodoAction } from '../../redux'
+import { addTodoAction, removeTodoAction } from '../../redux/todoReducer'
 
 const Todo = () => {
 

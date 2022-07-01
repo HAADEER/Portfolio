@@ -1,7 +1,7 @@
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Counter from './component/counter';
+import Counter from './component/counter/counter';
 import Navbar from './component/navbar/navbar';
 
 import { BrowserRouter , Route , Routes} from 'react-router-dom' ;
