@@ -21,7 +21,7 @@ const TodoList = ({ todos, removeTodo }) => {
           );
         })
       ) : (
-        <h2 className="text-center">Todo is Empty 🤷‍♀️...</h2>
+        <h2 className="text-center">Todo is Empty ...</h2>
       )}
     </div>
   );

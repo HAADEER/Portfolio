@@ -14,7 +14,7 @@ const Products = () => {
 
   return (
     <div>
-      <h1 className="text-center mb-5">Shops</h1>
+      <h1 className="text-center mb-5 text-secondary">Products</h1>
 
       {pendding ? (
         <div className="container d-flex justify-content-center">
@@ -23,19 +23,18 @@ const Products = () => {
             return (
               <Link
                 to={`/product/${item.id}`}
-                className="col-3 text-black text-decoration-none border my-3"
+                className="col-4 text-black text-decoration-none py-3 my-2 border"
                 key={item.id}
               >
                 <img
                   src={item.image}
-                  className="card-img-top"
-                  style={{ width: "18rem" }}
+                  className="card-img-top d-flex justify-content-center m-auto"
+                  style={{ width: "10rem" }}
                   alt="prod"
                 />
                 <div className="card-body">
-                  <h4>{item.title}</h4>
-                  <p className="card-text">{item.description}</p>
-                  <h5>{item.price}$</h5>
+                  <h5>{item.title}</h5>
+                  <h4 className="text-secondary text-center mt-3">{item.price}$</h4>
                 </div>
               </Link>
             );

@@ -30,7 +30,7 @@ const TodoForm = ({addTodo}) => {
     <br/>
     <textarea name='content' cols='22' rows='3' value={content} onChange={(e)=>{setContent(e.target.value)}}></textarea>
     <br/>
-    <button className='btn btn-success m-auto my-3' type='submit'>Add</button>
+    <button className='btn btn-primary m-auto my-3 px-4' type='submit'>Add</button>
     </form>
     </div>
   )
