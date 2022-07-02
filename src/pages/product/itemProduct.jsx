@@ -19,18 +19,20 @@ const ItemProduct = () => {
   return (
     <div>
       {Object.keys(itemProduct).length !== 0 ? 
-        <div className="container d-flex justify-content-center w-25">
+        <div className="container mt-5">
           <div className="row">
+            <div className="col-4">
           <img
             src={itemProduct.image}
-            className="card-img-top"
-            style={{ width: "18rem" }}
+            className="card-img-top d-flex justify-content-center m-auto"
+            style={{ width: "13rem" }}
             alt="prod"
           />
-          <div className="card-body">
+          </div>
+          <div className="card-body col-6">
             <h3>{itemProduct.title}</h3>
             <p className="card-text">{itemProduct.description}</p>
-            <h4 className="text-info">{itemProduct.price}$</h4>
+            <h4 className="text-secondary">{itemProduct.price}$</h4>
           </div>
           </div>
         </div>
