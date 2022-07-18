@@ -1,18 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {saveAs} from "file-saver"
 import picture from "../../assets/profilePic.jpg";
+import GitLogo from "../../assets/github-brands.svg";
 import "./home.css";
-import CV from '../../folder/Hadeer_Essam.pdf'
 const Home = () => {
   const userTodo = useSelector((state) => state.todos);
 
-  const downloadCV = () =>{
-    saveAs(
-      "https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:2b339ade-95a6-4a0e-a106-09a3e29d62c1",
-      "Hadeer_Essam.pdf"
-    )
-  }
 
   return (
     <div className="container home-wrapper">
@@ -25,9 +18,12 @@ const Home = () => {
         code I touch more readable, modular, performant and accessible than I
         found it.
           </p>
-          <button className="btn btn-info text-white" onClick={downloadCV}>
-            Download CV
-          </button>
+          <a href="https://github.com/HADEER-ESS">
+            <img src={GitLogo} alt="github logo" style={{width : 30}}/>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/?tab=wm#inbox">
+            <p>hadeeressam21@gmail.com</p>
+          </a>
         </div>
         <div className="col-6">
         <img
@@ -44,12 +40,3 @@ const Home = () => {
 
 export default Home;
 
-
-/*
-<a
-              className="text-decoration-none text-white"
-              href="https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:2b339ade-95a6-4a0e-a106-09a3e29d62c1"
-            >
-              View CV
-            </a>
-            */
